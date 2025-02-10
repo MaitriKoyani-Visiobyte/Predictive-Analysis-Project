@@ -105,6 +105,13 @@ For that we have get weight, height, age and gender from user.
 
 Also there are data visualization charts which shown that how accurate prediction is and how much have been error in prediction.
 
-- There is pie chart of distribution of disease in data which is Analysis of human disease. (you can see it in codefile predictiveAnalysis.ipynb)
+- There is pie chart of distribution of disease in data which is Analysis of human disease. 
+
+As shown below:
+<p align="center">
+  <img  src="Images/image.png">
+</p>
+
+- You can see all data visualization in **predictiveAnalysis.ipynb** file
 
 - If you have to make model more insightful then use DeepSeekv3 model which gives you in better way answer formats.

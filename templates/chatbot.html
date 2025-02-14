@@ -93,7 +93,14 @@
 </div>
 
 <script>
+
     const chatBox = document.getElementById("chat-box");
+    const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message","d-flex");
+        messageDiv.classList.add("bot-message");
+        messageDiv.textContent = "hello! how can i help you?";
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
 
     function appendMessage(message, isUser) {
         const messageDiv = document.createElement("div");
@@ -119,7 +126,7 @@
     async function fetchDialogflowResponse(message) {
         const projectId = "healthpredictor-kbys";  // Replace with your Dialogflow project ID
         const sessionId = Math.random().toString(36).substr(2, 9);  // Unique session ID for each user
-        const privateKey = "ya29.a0AXeO80T3NjmoqUs8FoYCkw0IYHDdlqRbp8xHo1eKA3-WbrGayPkL0VkNVl2vbsWmxtn4srpH5ZeiPpZdRZzR49WOW3wFSsSNFDJMq0Rd-Sq5ADDoI08-hTvBiRj8jMmWlcxBo22itokqspAGMtafiF7zyebELRD0tkFtPxLsaCgYKAQQSARASFQHGX2MiNA5R2_hErKuxJ5M1XlHBiA0175";
+        const privateKey = "ya29.a0AXeO80SBdow0i5uwzn1_fOlx7LBQ15n4t4pvm3ZiEVZ7mKElEjhtAI9eXiYQSro9Mz80g-YRRsPe5ZHDR753C3dhlaYVuqh2qgqm3HNRSFuvbZ_g3Utr2yaj0rkhpB6N0zMgRVF2gRyk1UyrmJ89nKGcxXjDUkWF2HgMwOgXaCgYKAUwSARASFQHGX2MiU3PsWJ1aBcMkNPofDMNN5g0175";
         const url = `https://dialogflow.googleapis.com/v2/projects/${projectId}/agent/sessions/${sessionId}:detectIntent`;
         console.log(url)
         const response = await fetch(url, {
